@@ -1,15 +1,16 @@
 package com.mamunsproject.imagesearch_retrofit_dg_hilt_paging3.mvvm
 
-import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.MutableLiveData
+ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
-import javax.inject.Inject
+import dagger.hilt.android.lifecycle.HiltViewModel
+ import javax.inject.Inject
 
 
-class GalleryViewModel @ViewModelInject constructor(val repository: UnsplashRepository) :
+@HiltViewModel
+class GalleryViewModel @Inject constructor(val repository: UnsplashRepository) :
     ViewModel() {
 
     val currentQuery = MutableLiveData(DEFAULT_QUERY)
