@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+    <fragment
+        android:id="@+id/mainActivity"
+
+        android:name="com.mamunsproject.imagesearch_retrofit_dg_hilt_paging3.ui.gallery.GalleryFragment"
+        android:label="activity_main"
+        tools:layout="@layout/fragment_gallery" />
+</navigation>
