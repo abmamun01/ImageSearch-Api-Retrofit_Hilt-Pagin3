@@ -24,7 +24,7 @@ class UnsplashPhotoPagingAdapter :
                     .load(photo.urls.regular)
                     .centerCrop()
                     .transition(DrawableTransitionOptions.withCrossFade())
-                    .error(R.drawable.gradient)
+                    .error(R.drawable.ic_launcher_foreground)
                     .into(imageView)
             }
         }

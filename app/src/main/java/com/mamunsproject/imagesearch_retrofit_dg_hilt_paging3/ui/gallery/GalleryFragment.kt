@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.mamunsproject.imagesearch_retrofit_dg_hilt_paging3.R
+import com.mamunsproject.imagesearch_retrofit_dg_hilt_paging3.adapter.UnsplashLoadStateAdapter
 import com.mamunsproject.imagesearch_retrofit_dg_hilt_paging3.adapter.UnsplashPhotoPagingAdapter
 import com.mamunsproject.imagesearch_retrofit_dg_hilt_paging3.databinding.FragmentGalleryBinding
 import com.mamunsproject.imagesearch_retrofit_dg_hilt_paging3.mvvm.GalleryViewModel
@@ -27,9 +28,15 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
 
         val adapter = UnsplashPhotoPagingAdapter()
 
+
         binding.apply {
             recyclerView.setHasFixedSize(true)
-            recyclerView.adapter = adapter
+            // recyclerView.adapter = adapter
+            recyclerView.adapter = adapter.withLoadStateHeaderAndFooter(
+                header = UnsplashLoadStateAdapter { adapter.retry() },
+                footer = UnsplashLoadStateAdapter { adapter.retry() },
+
+                )
         }
 
 
